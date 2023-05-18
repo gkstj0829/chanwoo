@@ -1,17 +1,52 @@
 // BossScreen.java
 import javax.swing.*;
+import java.awt.event.*;
 
-<<<<<<< HEAD
-public class BossScreen extends util{
+public class BossScreen extends BasicScreen {
+    private Util util;
 
-=======
-public class BossScreen {
->>>>>>> 75289248605882f4aaa3afa4587c970b06c3311b
     public BossScreen() {
-        JFrame frame = new JFrame("Boss Screen");
-        frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
+        super();
+        util = new Util();
+
+        frame.setTitle("Boss Screen");
+
+        JButton addButton = new JButton("Add Employee");
+        addButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                util.addEmployee();
+            }
+        });
+
+        JButton removeButton = new JButton("Remove Employee");
+        removeButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                util.removeEmployee();
+            }
+        });
+
+        JButton payrollButton = new JButton("Calculate Total Payroll");
+        payrollButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                util.calculateTotalPayroll();
+            }
+        });
+
+        JButton scheduleButton = new JButton("Display Schedule");
+        scheduleButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                util.displaySchedule();
+            }
+        });
+
+        JPanel panel = new JPanel();
+        panel.add(addButton);
+        panel.add(removeButton);
+        panel.add(payrollButton);
+        panel.add(scheduleButton);
+        frame.add(panel);
+
+        frame.pack();
         frame.setVisible(true);
     }
 }

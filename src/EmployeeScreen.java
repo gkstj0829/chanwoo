@@ -1,12 +1,10 @@
 // EmployeeScreen.java
 import javax.swing.*;
 
-public class EmployeeScreen {
+public class EmployeeScreen extends BasicScreen{
     public EmployeeScreen() {
-        JFrame frame = new JFrame("Employee Screen");
-        frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
+        super();
+        frame.setTitle("Boss Screen");
         frame.setVisible(true);
     }
 }
